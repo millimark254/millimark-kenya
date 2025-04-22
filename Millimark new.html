@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrandVibe Studio offers expert branding, digital marketing, content creation, and web design services to elevate your business.">
+  <meta name="keywords" content="branding, digital marketing, web design, content creation, marketing agency">
+  <meta name="author" content="BrandVibe Studio">
+  <meta name="robots" content="index, follow">
+  <title>MilliMark Kenya - Marketing & Branding</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      color: #708090;
+      line-height: 1.6;
+    }
+
+    #navbar {
+      background-color: #191970;
+      padding: 1rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #navbar li {
+      margin-left: 2rem;
+    }
+
+    #navbar a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    #navbar a:hover {
+      color: #F08080;
+    }
+
+    #hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 0 5%;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: #4682B4;
+      color: #FFFFFF;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #F08080;
+    }
+
+    #services {
+      padding: 5rem 5%;
+      text-align: center;
+    }
+
+    #services h2 {
+      color: #191970;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: #F5F6F5;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      color: #4682B4;
+      margin-bottom: 1rem;
+    }
+
+    #portfolio {
+      padding: 5rem 5%;
+      background-color: #F5F6F5;
+      text-align: center;
+    }
+
+    #portfolio h2 {
+      color: #191970;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(70, 130, 180, 0.8);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay p {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
+
+    #contact {
+      padding: 5rem 5%;
+      text-align: center;
+    }
+
+    #contact h2 {
+      color: #191970;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      color: #708090;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #708090;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    footer {
+      background-color: #191970;
+      color: #FFFFFF;
+      padding: 2rem 5%;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: #FFFFFF;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #F08080;
+    }
+
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 2rem;
+      }
+
+      #hero p {
+        font-size: 1rem;
+      }
+
+      #navbar ul {
+        justify-content: center;
+      }
+
+      #navbar li {
+        margin: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div>
+      <h1>Elevate Your Brand with BrandVibe Studio</h1>
+      <p>Cutting-edge marketing and branding solutions to make your business stand out.</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Brand Strategy</h3>
+        <p>Develop a unique brand identity that resonates with your target audience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Digital Marketing</h3>
+        <p>Boost your online presence with SEO, PPC, and social media campaigns.</p>
+      </div>
+      <div class="service-card">
+        <h3>Content Creation</h3>
+        <p>Engaging visuals, videos, and copy that tell your brand’s story.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Custom websites that are stunning, responsive, and user-friendly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Our Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" alt="Luxury Fashion Campaign">
+        <div class="portfolio-overlay">
+          <p>Luxury Fashion Campaign</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1516321310764-90a583fa30e0" alt="Tech Startup Branding">
+        <div class="portfolio-overlay">
+          <p>Tech Startup Branding</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="E-commerce Website">
+        <div class="portfolio-overlay">
+          <p>E-commerce Website</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <input type="hidden" name="_next" value="/thank-you.html">
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Millimark Kenya. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://twitter.com">Twitter</a>
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
